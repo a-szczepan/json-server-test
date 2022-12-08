@@ -1,11 +1,29 @@
 {
     "brands": [
         "Dior",
+        "Yves Saint Laurent",
+        "Lancome",
         "Versace",
         "Prada",
         "Chanel",
         "Imaginary Autors",
+        "Robert Piguet",
         "Amouage",
-        "Gallivant"
+        "Gallivant",
+        "Exuma Parfums",
+        "Nasomatto"
+    ],
+    "groups": [
+        "woody",
+        "floral",
+        "fruity",
+        "fresh",
+        "leather",
+        "citrus",
+        "amber",
+        "aromatic",
+        "green",
+        "musky",
+        "sweet"
     ]
 }
