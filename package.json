@@ -4,7 +4,8 @@
   "description": "JSON Mock API",
   "main": "index.js",
   "scripts": {
-    "build": "json-server --watch src/db.json --port 5000"
+    "build": "json-server --watch src/db.json --port 5000",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
