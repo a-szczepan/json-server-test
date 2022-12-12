@@ -378,7 +378,6 @@
                         "note": "olibanum",
                         "photo": "https://fimgs.net/mdimg/sastojci/t.95.jpg"
                     }
-
                 ],
                 "base": [
                     {
@@ -455,6 +454,83 @@
                     {
                         "note": "cinnamon",
                         "photo": "https://fimgs.net/mdimg/sastojci/t.65.jpg"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "6",
+            "photo": "https://fraguru.com/mdimg/perfume/375x500.49518.jpg",
+            "gender": "unisex",
+            "brand": "Les Bains Guerbois",
+            "name": "Les Bains Guerbois 1885 Eau de Cologne",
+            "mainAccords": [
+                {
+                    "accord": "warm spicy",
+                    "value": "100.00"
+                },
+                {
+                    "accord": "amber",
+                    "value": "78.43"
+                },
+                {
+                    "accord": "woody",
+                    "value": "56.32"
+                },
+                {   
+                    "accord": "aromatic",
+                    "value": "54.54"
+                }
+            ],
+            "rating": {
+                "average": "3.47",
+                "amount": "15"
+            },
+            "occasions": {
+                "day": "100.00",
+                "night": "46.36",
+                "spring": "31.78",
+                "summer": "75.01",
+                "autumn": "100.00",
+                "winter": "53.15"
+            },
+            "notes": {
+                "top": [
+                    {
+                        "note": "cardamom",
+                        "photo": "https://fimgs.net/mdimg/sastojci/t.63.jpg"
+                    },
+                    {
+                        "note": "ginger",
+                        "photo": "https://fimgs.net/mdimg/sastojci/t.62.jpg"
+                    }
+                ],
+                "heart": [
+                    {
+                        "note": "patchouli",
+                        "photo": "https://fimgs.net/mdimg/sastojci/t.34.jpg"
+                    },
+                    {
+                        "note": "cedar",
+                        "photo": "https://fimgs.net/mdimg/sastojci/t.41.jpg"
+                    },
+                    {
+                        "note": "papirus",
+                        "photo": "https://fraguru.com/mdimg/sastojci/t.206.jpg"
+                    }
+                ],
+                "base": [
+                    {
+                        "note": "olibanum",
+                        "photo": "https://fimgs.net/mdimg/sastojci/t.95.jpg"
+                    },
+                    {
+                        "note": "amber",
+                        "photo": "https://fimgs.net/mdimg/sastojci/t.54.jpg"
+                    },
+                    {
+                        "note": "musk",
+                        "photo": "https://fimgs.net/mdimg/sastojci/t.4.jpg"
                     }
                 ]
             }
