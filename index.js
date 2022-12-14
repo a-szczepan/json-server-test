@@ -34,7 +34,7 @@ server.get("/perfumes/filter", (req, res) => {
         : perfume
     );
 
-  res.status(200).jsonp(output.slice((page - 1) * limit, page * limit));
+  res.status(200).json(output.slice((page - 1) * limit, page * limit));
 });
 
 server.use(router);
