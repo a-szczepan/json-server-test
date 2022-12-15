@@ -33,7 +33,12 @@ server.get("/perfumes/filter", (req, res) => {
         (gender.length > 0 ? gender.includes(perfume.gender) : perfume)
     );
 
-  res.status(200).json(output.slice((page - 1) * limit, page * limit));
+    if(page===0){
+      res.status(200).json(output);
+    } else {
+      res.status(200).json(output.slice((page - 1) * limit, page * limit));
+    }
+  
 });
 
 server.use(router);
