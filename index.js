@@ -11,9 +11,9 @@ server.get("/perfumes/filter", (req, res) => {
   const db = router.db.toJSON();
   const page = req.query.page ? req.query.page : 1;
   const limit = req.query.limit ? req.query.limit : 20;
-  const gender = req.query.gender ? req.query.gender : [];
-  const brand = req.query.brand ? req.query.brand : [];
-  const group = req.query.group ? req.query.group : [];
+  const gender = req.query.gender ? [req.query.gender].flat() : [];
+  const brand = req.query.brand ? [req.query.brand].flat() : [];
+  const group = req.query.group ? [req.query.group].flat() : [];
 
   const output = db.perfumes
     .map((perfume) => {
@@ -26,7 +26,8 @@ server.get("/perfumes/filter", (req, res) => {
       group.length > 0
         ? perfume.mainAccords.some((i) => group.includes(i))
         : perfume
-    ).filter(
+    )
+    .filter(
       (perfume) =>
         (brand.length > 0 ? brand.includes(perfume.brand) : perfume) &&
         (gender.length > 0 ? gender.includes(perfume.gender) : perfume)
