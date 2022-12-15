@@ -32,13 +32,16 @@ server.get("/perfumes/filter", (req, res) => {
         (brand.length > 0 ? brand.includes(perfume.brand) : perfume) &&
         (gender.length > 0 ? gender.includes(perfume.gender) : perfume)
     );
+  const total = output.length;
 
-    if(page===0){
-      return res.status(200).json(output);
-    } else {
-      return res.status(200).json(output.slice((page - 1) * limit, page * limit));
-    }
-  
+  return res
+    .status(200)
+    .json({
+      data: output.slice((page - 1) * limit, page * limit),
+      page: Number(page),
+      itemsPerPage: Number(limit),
+      total,
+    });
 });
 
 server.use(router);
