@@ -15,13 +15,7 @@ server.get("/perfumes/filter", (req, res) => {
   const brand = req.query.brand ? req.query.brand : [];
   const group = req.query.group ? req.query.group : [];
 
-  let output = db.perfumes.filter(
-    (perfume) =>
-      (brand.length > 0 ? brand.includes(perfume.brand) : perfume) &&
-      (gender.length > 0 ? gender.includes(perfume.gender) : perfume)
-  );
-
-  output = db.perfumes
+  const output = db.perfumes
     .map((perfume) => {
       return {
         ...perfume,
@@ -32,6 +26,10 @@ server.get("/perfumes/filter", (req, res) => {
       group.length > 0
         ? perfume.mainAccords.some((i) => group.includes(i))
         : perfume
+    ).filter(
+      (perfume) =>
+        (brand.length > 0 ? brand.includes(perfume.brand) : perfume) &&
+        (gender.length > 0 ? gender.includes(perfume.gender) : perfume)
     );
 
   res.status(200).json(output.slice((page - 1) * limit, page * limit));
