@@ -14,6 +14,7 @@ server.get("/perfumes/filter", (req, res) => {
   const gender = req.query.gender ? [req.query.gender].flat() : [];
   const brand = req.query.brand ? [req.query.brand].flat() : [];
   const group = req.query.group ? [req.query.group].flat() : [];
+  const keyword = req.query.keyword ? req.query.keyword : "";
 
   const output = db.perfumes
     .map((perfume) => {
@@ -31,17 +32,21 @@ server.get("/perfumes/filter", (req, res) => {
       (perfume) =>
         (brand.length > 0 ? brand.includes(perfume.brand) : perfume) &&
         (gender.length > 0 ? gender.includes(perfume.gender) : perfume)
+    )
+    .filter(
+      (perfume) =>
+        perfume.name.toUpperCase().includes(keyword.toUpperCase()) ||
+        perfume.brand.toUpperCase().includes(keyword.toUpperCase())
     );
+
   const total = output.length;
 
-  return res
-    .status(200)
-    .json({
-      data: output.slice((page - 1) * limit, page * limit),
-      page: Number(page),
-      itemsPerPage: Number(limit),
-      total,
-    });
+  return res.status(200).json({
+    data: output.slice((page - 1) * limit, page * limit),
+    page: Number(page),
+    itemsPerPage: Number(limit),
+    total,
+  });
 });
 
 server.use(router);
